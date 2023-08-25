@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-AkshitSingh</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/3ae3592333.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="logo.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#socialmedia">Social Media</a></li>
+            <li><a href="#contactme">Contact Me</a></li>
+            <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>(Web Developer || Python Programmer)<br /></p>
+          <h1><br />Hi, My name is AKSHIT SINGH.</h1>
+          <h2>I am from Haridwar, Uttarakhand.</h2>
+        </div>
+      </div>
+    </div>
+    <!--------------------ABOUT SECTION STARTS--------------------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="akshit.png.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p>
+              Akshit is a very hardworking,enthusiastic and consistent person.My
+              hobbies are playing video games(especially BGMI and clash of
+              clans(COC)),football,cricket,watching movies,listening music and
+              exploring new things in tech. I have completed my schooling from
+              "St. Mary's Sr. Sec. School".And I am currently pursuing my B.Tech
+              from "Institute Of Technology, Gopeshwar" in CSE branch.My aim in
+              life is to buy a super car and achieve good position in my career.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="openTab('Skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="openTab('Experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="openTab('Education')">Education</p>
+            </div>
+            <div class="contents active-tab" id="Skills">
+              <ul>
+                <li><span>HTML</span><br />* * * *</li>
+                <li><span>CSS</span><br />* * * *</li>
+                <li><span>JAVASCRIPT</span><br />* * * *</li>
+                <li><span>Python</span><br />* * * *</li>
+                <li><span>MySQL</span><br />* * * *</li>
+              </ul>
+            </div>
+            <div class="contents" id="Experience">
+              <ul>
+                <li>
+                  <span
+                    >I am a student right now, will have experience in the
+                    future.</span
+                  ><br />
+                </li>
+              </ul>
+            </div>
+            <div class="contents" id="Education">
+              <ul>
+                <li>
+                  <span>St. Mary's Sr. Sec. School</span><br />Marks
+                  Obtained-<br />10th ~ 88%<br />12th ~ 92.2%
+                </li>
+                <br />
+                <li>
+                  <span>Institute Of Technology, Gopeshwar</span
+                  ><br />(2021-2025) CURRENT<br />Bachelor's Of Technology -
+                  Computer Science & Engineering
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION STARTS -->
+
+    <div class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left" id="contactme">
+            <h1>Contact Me</h1>
+            <h2> Social Media handles -</h2>
+            <div class="icons" id="socialmedia">
+              
+              <a href="mailto:akshitsingh28bhanu@gmail.com"><i class="fa-regular fa-envelope fa-beat"></i></a>
+              <a href="https://www.linkedin.com/in/akshitrajpoot0101"
+                ><i
+                  class="fa-brands fa-linkedin fa-beat"
+                ></i
+              ></a>
+              <a href="https://www.instagram.com/_akshitsingh28bhanu"
+                ><i
+                  class="fa-brands fa-square-instagram fa-beat"
+                ></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn">SUBMIT</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>copyright <i class="fa-regular fa-copyright" style="color: #02d6f2;"></i> Akshit</p>
+      </div>
+    </div>
+
+    <script>
+      const tablink = document.getElementsByClassName("tab-links");
+      const tabcontent = document.getElementsByClassName("contents");
+      const openTab = (tabname) => {
+        for (link of tablink) {
+          link.classList.remove("active-link");
+        }
+        for (content of tabcontent) {
+          content.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      };
+    </script>
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openMenu(){
+          sidemenu.style.right="0";
+        }
+        function closeMenu(){
+          sidemenu.style.right="-200px";
+        }
+
+
+    </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx3SEtsNNzSwZg4V9ueYiFGvFPx0SEJHzGOsxt7Pn0-Plfi3B76uuxZGxKKtCiHUGDr/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Submitted Successfully";
+        setTimeout(function(){
+          msg.innerHTML = ""
+        },3500)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+   
+
+  </body>
+</html>
+
+
